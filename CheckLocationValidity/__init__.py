@@ -9,6 +9,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     location = req.params.get('location')
 
     if location in locations:
-        return func.HttpResponse(True)
+        return func.HttpResponse(status_code=200)
     else:
-        return func.HttpResponse(False)
+        return func.HttpResponse(status_code=404)
